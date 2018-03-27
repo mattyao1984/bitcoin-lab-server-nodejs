@@ -9,7 +9,15 @@ const rateSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  old_rate: {
+    type: String,
+    required: true
+  },
   rate_float: {
+    type: Number,
+    require: true
+  },
+  old_rate_float: {
     type: Number,
     require: true
   },

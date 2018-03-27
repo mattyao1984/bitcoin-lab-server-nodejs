@@ -18,11 +18,11 @@ mongoose.connection.on('error', function(err) {
   process.exit(-1);
 });
 
-app.get('/test', function(req, res){
-  res.send('test page');
-});
 require('./config/express')(app);
 require('./routes')(app);
+
+const rateController = require('./controllers/rate/rate.controller');
+rateController.tickerUpdate();
 
 const server = require('http').createServer(app);
 server.listen(config.port, function() {
